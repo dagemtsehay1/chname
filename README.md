@@ -51,10 +51,16 @@ git clone https://github.com/dagemtsehay1/chname.git
 
 ### Running the `chname` Script
 >To run the chname script, navigate to the repository directory and execute the script with the desired options. 
-
+>
 >Examples:
 
 ```bash
+# Convert file name to lowercase in the current directory
+./chname.sh -l FILE1
+
+# Convert file name to uppercase in the current directory
+./chname.sh -U file1
+
 # Display help
 ./chname.sh -h
 ```
