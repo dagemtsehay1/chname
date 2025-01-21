@@ -21,6 +21,10 @@ echo -e "\nTest: Convert subdirectory names to lowercase recursively\n\n./chname
 ./chname.sh -r -s -l demo
 tree demo
 
+echo -e "\nTest: Convert subdirectory names to uppercase recursively\n\n./chname.sh -r -s -u demo\n"
+./chname.sh -r -s -u demo
+tree demo
+
 echo -e "\nTest: Invalid usage examples\n\n./chname.sh -x demo"
 ./chname.sh -x demo
 

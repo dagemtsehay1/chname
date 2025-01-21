@@ -97,16 +97,15 @@ process_items() {
       if $RECURSIVE; then
         local contents=()
         if $SUBDIRECTORIES; then
-          contents=($(find "$item" -mindepth 1))
+          contents=($(find "$item" -depth -mindepth 1))
         else
-          contents=($(find "$item" -type f))
-        fi
-        process_items "${contents[@]}" 
+          contents=($(find "$item" -depth -type f))
+        fi 
+        for file in "${contents[@]}";do
+          rename_item "$file"
+        done
       fi
-      
-      if $SUBDIRECTORIES && $RECURSIVE && [[ "$item" != "$item/"* ]] && [[ -d "$item" ]]; then
-        rename_item "$item" 
-      fi
+
       if $SUBDIRECTORIES && ! $RECURSIVE; then
         rename_item "$item" 
       fi
